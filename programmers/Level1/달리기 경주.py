@@ -5,9 +5,8 @@ def solution(players, callings):
     for i in callings:
         call = dict[i]
         players[call-1], players[call] = players[call], players[call-1]
-        buf = dict[i]
-        dict[players[call-1]] = dict[players[call]]
-        dict[players[call]] = buf
+        dict[players[call-1]] -= 1
+        dict[players[call]] += 1
     return players
 
 print(solution(["mumu", "soe", "poe", "kai", "mine"], ["kai", "kai", "mine", "mine"]))
